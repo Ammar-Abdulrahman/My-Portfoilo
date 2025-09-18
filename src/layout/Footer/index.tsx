@@ -1,3 +1,4 @@
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import "./index.css";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -33,6 +34,18 @@ const Footer = () => {
       </ul>
 
       <div className="footer__social">
+        <a
+          href="https://www.linkedin.com/in/ammar-abdulrahman/ "
+          target="_blank"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          href="https://www.github.com/ammar-abdulrahman/ "
+          target="_blank"
+        >
+          <BsGithub />
+        </a>
         <a
           href="https://www.facebook.com/profile.php?id=100006471773863"
           target="_blank"
