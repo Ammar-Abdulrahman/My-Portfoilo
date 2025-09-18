@@ -57,7 +57,8 @@ header {
 
 /*************** Media Query (Small Devices)*****************/
 @media screen and (max-width: 600px) {
-  .scroll__down {
+  .scroll__down,
+  .header__social {
     display: none;
   }
 }

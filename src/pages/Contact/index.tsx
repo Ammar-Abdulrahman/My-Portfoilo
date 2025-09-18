@@ -55,10 +55,7 @@ const ContactUs = () => {
             </div>
             <h4>Whatsapp</h4>
             <h5>+963 964 793 913</h5>
-            <a
-              href="https://api.whatsapp.com/send?phone+963964793913"
-              target="_blank"
-            >
+            <a href="https://wa.me/+963964793913" target="_blank">
               Send a message
             </a>
           </article>
