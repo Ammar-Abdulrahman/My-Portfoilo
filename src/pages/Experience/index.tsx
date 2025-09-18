@@ -128,7 +128,7 @@ const Experience = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Mar 2024 – Jul 2024</span>
+              <span>Mar 2025 – Jul 2025</span>
             </div>
 
             <div className="experience__location">
