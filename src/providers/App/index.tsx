@@ -1,5 +1,10 @@
+import MainPage from "@Pages/index";
 const index = () => {
-  return <div>index</div>;
+  return (
+    <div>
+      <MainPage />
+    </div>
+  );
 };
 
 export default index;
