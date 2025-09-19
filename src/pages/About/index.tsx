@@ -3,10 +3,17 @@ import { HiUsers } from "react-icons/hi2";
 import { AiFillProject } from "react-icons/ai";
 import "./index.css";
 import ammar from "@Assets/images/carton4.png";
+import { motion } from "framer-motion";
 
 const index = () => {
   return (
-    <section id="about">
+    <motion.section
+      id="about"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
       <h5>Get To Know</h5>
       <h2>About Me</h2>
 
@@ -55,7 +62,7 @@ const index = () => {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

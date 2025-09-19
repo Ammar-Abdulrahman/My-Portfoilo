@@ -1,11 +1,18 @@
 import "./index.css";
 import universityLogo from "@Assets/images/damscus-removebg-preview.png"; // You'll need to add your actual logo
+import { motion } from "framer-motion";
 import { RiGraduationCapFill } from "react-icons/ri";
-
 
 const Experience = () => {
   return (
-    <section id="education" className="education__section">
+    <motion.section
+      id="education"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="education__section"
+    >
       <h5>My academic journey in software engineering</h5>
       <h2>My Education</h2>
 
@@ -81,7 +88,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

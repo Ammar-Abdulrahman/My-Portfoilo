@@ -5,10 +5,18 @@ import TabTabGoLogo from "@Assets/images/tabtabgo.png";
 import FreeLancerLogo from "@Assets/images/freelancer.png";
 
 import { PiBuildingOfficeBold } from "react-icons/pi";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section id="experience" className="experience__section">
+    <motion.section
+      id="experience"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="experience__section"
+    >
       <h5>My experience journey in software engineering</h5>
       <h2>My Experience</h2>
 
@@ -322,7 +330,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -8,10 +8,17 @@ import { VscSourceControl } from "react-icons/vsc";
 import { SiHyperskill } from "react-icons/si";
 
 import "./index.css";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <section id="skills">
+    <motion.section
+      id="skills"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true}}
+      transition={{ duration: 0.8, delay: 0.3 }}
+    >
       <h5>What Skills I Have</h5>
       <h2>My Skills</h2>
 
@@ -239,7 +246,7 @@ const Experience = () => {
             <article className="skills__details">
               <TbPointFilled className="skills__details-icon" />
               <div>
-                <h4>Clean code</h4>
+                <h4>Clean code and architecture</h4>
               </div>
             </article>
             <article className="skills__details">
@@ -264,7 +271,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

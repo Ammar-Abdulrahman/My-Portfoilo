@@ -2,6 +2,7 @@ import "./index.css";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const ContactUs = () => {
   const handleSubmit = (event: React.FormEvent) => {
@@ -21,7 +22,13 @@ const ContactUs = () => {
   };
 
   return (
-    <section id="contact">
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+    >
       <h5>Get In Touch</h5>
       <h2>Contact Me</h2>
 
@@ -81,7 +88,7 @@ const ContactUs = () => {
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

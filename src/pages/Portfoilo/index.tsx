@@ -7,10 +7,17 @@ import UniversityCover from "@Assets/projects/universirty1.png";
 
 import BolignetCover from "@Assets/projects/bolignet.png";
 import XboxCover from "@Assets/projects/xbox.png";
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
   return (
-    <section id="portfolio">
+    <motion.section
+      id="portfolio"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+    >
       <h5>My React Work</h5>
       <h2>Portfolio</h2>
 
@@ -154,7 +161,7 @@ const Portfolio = () => {
           </div>
         </article>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
