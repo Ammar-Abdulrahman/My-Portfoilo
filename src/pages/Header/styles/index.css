@@ -55,6 +55,17 @@ header {
   font-size: 0.9rem;
 }
 
+.animated-name {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /*************** Media Query (Small Devices)*****************/
 @media screen and (max-width: 600px) {
   .scroll__down,
