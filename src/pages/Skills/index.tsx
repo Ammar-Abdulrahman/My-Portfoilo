@@ -4,7 +4,7 @@ import { SiCssdesignawards } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
 //import { FaCode } from "react-icons/fa6";
 import { MdManageAccounts } from "react-icons/md";
-import { VscSourceControl } from "react-icons/vsc";
+import { IoGitBranch } from "react-icons/io5";
 import { SiHyperskill } from "react-icons/si";
 
 import "./index.css";
@@ -16,7 +16,7 @@ const Experience = () => {
       id="skills"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true}}
+      viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.3 }}
     >
       <h5>What Skills I Have</h5>
@@ -33,6 +33,12 @@ const Experience = () => {
               <TbPointFilled className="skills__details-icon" />
               <div>
                 <h4>React Js</h4>
+              </div>
+            </article>
+            <article className="skills__details">
+              <TbPointFilled className="skills__details-icon" />
+              <div>
+                <h4>Next Js</h4>
               </div>
             </article>
             <article className="skills__details">
@@ -172,7 +178,7 @@ const Experience = () => {
 
         <div className="skills__backend">
           <div className="skills__icon-container">
-            <VscSourceControl className="skills__icon" />
+            <IoGitBranch className="skills__icon" />
           </div>
           <h3>Version Control</h3>
           <div className="skills__content">
