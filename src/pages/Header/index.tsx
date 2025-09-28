@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Cta from "./components/Cta";
 import HeaderSocial from "./components/HeaderSocial";
-import ammar from "@Assets/images/carton4.png";
+import ammar from "@Assets/images/carton6.png";
 import "./styles/index.css";
 
 const HeaderPage = () => {
