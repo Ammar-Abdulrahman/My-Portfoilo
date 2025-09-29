@@ -1,6 +1,6 @@
-import { FaAward } from "react-icons/fa";
-import { HiUsers } from "react-icons/hi2";
-import { AiFillProject } from "react-icons/ai";
+// import { FaAward } from "react-icons/fa";
+// import { HiUsers } from "react-icons/hi2";
+// import { AiFillProject } from "react-icons/ai";
 import "./index.css";
 import ammar from "@Assets/images/carton6.png";
 import { motion } from "framer-motion";
@@ -27,27 +27,27 @@ const index = () => {
         <div className="about__content">
           <div className="about__cards">
             <article className="about__card">
-              <div className="about__icon-container">
+              {/* <div className="about__icon-container">
                 <FaAward className="about__icon" />
-              </div>
+              </div> */}
               <h5>Experience</h5>
-              <small>2+ Years Working</small>
+              <small>2+ Years</small>
             </article>
 
             <article className="about__card">
-              <div className="about__icon-container">
+              {/* <div className="about__icon-container">
                 <HiUsers className="about__icon" />
-              </div>
+              </div> */}
               <h5>Clients</h5>
               <small>5+ Worldwide</small>
             </article>
 
             <article className="about__card">
-              <div className="about__icon-container">
+              {/* <div className="about__icon-container">
                 <AiFillProject className="about__icon" />
-              </div>
+              </div> */}
               <h5>Projects</h5>
-              <small>15+ Completed</small>
+              <small>10+ Completed</small>
             </article>
           </div>
 
