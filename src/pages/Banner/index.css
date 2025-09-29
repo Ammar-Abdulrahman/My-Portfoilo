@@ -6,6 +6,12 @@
   margin-top: 1rem;
 }
 
+.cta {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
 .header__social_banner a {
   padding: 0.3rem;
   background: var(--color-primary);
@@ -63,4 +69,3 @@
     transform: translate(-50%, -52%) scale(1.05) rotate(5deg);
   }
 }
-
