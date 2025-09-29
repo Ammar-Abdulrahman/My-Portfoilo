@@ -1,0 +1,15 @@
+.navbar__des {
+  padding: 0.5rem;
+  background: #221f38;
+  position: fixed;
+  width:100%;
+  z-index: 9999;
+  box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*************** Media Query (Small Devices)*****************/
+@media screen and (max-width: 600px) {
+  .navbar__des {
+    display: none;
+  }
+}
