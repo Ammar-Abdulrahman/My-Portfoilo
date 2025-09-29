@@ -1,0 +1,66 @@
+.header__social_banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.header__social_banner a {
+  padding: 0.3rem;
+  background: var(--color-primary);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  color: var(--color-bg-varient);
+  box-shadow: 1.5px 3px 3px 1.5px rgba(141, 172, 219, 0.2);
+}
+
+.header__social_banner a:hover {
+  color: var(--color-primary);
+  background: var(--color-bg-varient);
+}
+
+.banner {
+  margin-top: 0rem;
+  transform: scale(70%);
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20rem 20rem 0 0;
+  display: grid;
+  align-items: center;
+  place-items: center;
+  position: relative;
+}
+
+.banner .image {
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+  z-index: 10;
+  transform: scale(95%);
+}
+
+.banner svg {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  width: 120%;
+  height: 120%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(-5deg);
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.05) rotate(5deg);
+  }
+}
+
