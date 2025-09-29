@@ -76,8 +76,17 @@ const Experience = () => {
             </div>
           </div>
 
+          <div>
+            My academic journey at the Faculty of Information Technology
+            Engineering instilled a systematic approach to software development,
+            emphasizing clean architecture and efficient coding practices that I
+            consistently apply in professional projects and provided deep
+            insights into scalable system design and development methodologies,
+            forming the bedrock of my technical expertise and approach to
+            building maintainable applications.
+          </div>
+
           <div className="education__courses">
-            <h4>Relevant Coursework:</h4>
             <div className="education__course-list">
               <span className="education__course-pill">Algorithm</span>
               <span className="education__course-pill">Data Structures</span>
