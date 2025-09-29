@@ -52,9 +52,11 @@ const index = () => {
           </div>
 
           <p>
-            Software Engineer with 2 years experience in front-end development,
-            high level of adaptability, commitment and passion to learn new
-            things and improve my skills
+            Detail-oriented Front End Engineer dedicated to building seamless
+            digital experiences through clean code and innovative solutions.
+            With a solid foundation in software engineering principles and
+            hands-on experience across multiple frameworks, I bring both
+            technical excellence and creative problem-solving to every project.
           </p>
 
           <a href="#contact" className="btn btn-primary">
