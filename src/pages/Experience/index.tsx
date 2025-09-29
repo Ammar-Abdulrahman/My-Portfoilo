@@ -3,8 +3,14 @@ import presentlyLogo from "@Assets/images/presently.jpg";
 import LogicDevLogo from "@Assets/images/logic.jpg";
 import TabTabGoLogo from "@Assets/images/tabtabgo.png";
 import FreeLancerLogo from "@Assets/images/freelancer.png";
+import {
+  TbCircleNumber1Filled,
+  TbCircleNumber2Filled,
+  TbCircleNumber3Filled,
+  TbCircleNumber4Filled,
+} from "react-icons/tb";
 
-import { PiBuildingOfficeBold } from "react-icons/pi";
+// import { PiBuildingOfficeBold } from "react-icons/pi";
 import { motion } from "framer-motion";
 
 const Experience = () => {
@@ -27,7 +33,7 @@ const Experience = () => {
         <div className="experience__card">
           {/* Timeline dot */}
           <div className="experience__timeline-dot">
-            <PiBuildingOfficeBold />
+            <TbCircleNumber1Filled className="w-5 h-5" />
           </div>
 
           <div className="experience__header">
@@ -81,7 +87,6 @@ const Experience = () => {
           </div>
 
           <div className="experience__courses">
-            <h4>Relevant Coursework:</h4>
             <div className="experience__course-list">
               <span className="experience__course-pill">
                 ● Designed and implemented reusable UI components to ensure
@@ -107,7 +112,7 @@ const Experience = () => {
         <div className="experience__card">
           {/* Timeline dot */}
           <div className="experience__timeline-dot">
-            <PiBuildingOfficeBold />
+            <TbCircleNumber2Filled className="w-5 h-5" />
           </div>
 
           <div className="experience__header">
@@ -157,7 +162,6 @@ const Experience = () => {
           </div>
 
           <div className="experience__courses">
-            <h4>Relevant Coursework:</h4>
             <div className="experience__course-list">
               <span className="experience__course-pill">
                 ● Designed and implemented reusable UI components to ensure
@@ -173,6 +177,17 @@ const Experience = () => {
               </span>
             </div>
           </div>
+
+          <div>
+            <div className="experience__course-list">
+              <span className="experience__key-work">React</span>
+              <span className="experience__key-work">React query</span>
+              <span className="experience__key-work">Zustand</span>
+              <span className="experience__key-work">Material ui</span>
+              <span className="experience__key-work">Ant design</span>
+              <span className="experience__key-work">Slack</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -183,7 +198,7 @@ const Experience = () => {
         <div className="experience__card">
           {/* Timeline dot */}
           <div className="experience__timeline-dot">
-            <PiBuildingOfficeBold />
+            <TbCircleNumber3Filled className="w-5 h-5" />
           </div>
 
           <div className="experience__header">
@@ -233,7 +248,6 @@ const Experience = () => {
           </div>
 
           <div className="experience__courses">
-            <h4>Relevant Coursework:</h4>
             <div className="experience__course-list">
               <span className="experience__course-pill">
                 ● Developed responsive user interfaces using React to enhance
@@ -256,6 +270,17 @@ const Experience = () => {
               </span>
             </div>
           </div>
+
+          <div>
+            <div className="experience__course-list">
+              <span className="experience__key-work">React</span>
+              <span className="experience__key-work">Redux toolkit</span>
+              <span className="experience__key-work">Material ui</span>
+              <span className="experience__key-work">Azure</span>
+              <span className="experience__key-work">CI/CD</span>
+              <span className="experience__key-work">Clockify</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -266,7 +291,7 @@ const Experience = () => {
         <div className="experience__card">
           {/* Timeline dot */}
           <div className="experience__timeline-dot">
-            <PiBuildingOfficeBold />
+            <TbCircleNumber4Filled className="w-5 h-5" />
           </div>
 
           <div className="experience__header">
@@ -316,7 +341,6 @@ const Experience = () => {
           </div>
 
           <div className="experience__courses">
-            <h4>Relevant Coursework:</h4>
             <div className="experience__course-list">
               <span className="experience__course-pill">
                 ● Designed and implemented reusable UI components to ensure

@@ -12,14 +12,14 @@ import { motion } from "framer-motion";
 const Portfolio = () => {
   return (
     <motion.section
-      id="portfolio"
+      id="projects"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.3 }}
     >
       <h5>My React Work</h5>
-      <h2>Portfolio</h2>
+      <h2>Projects</h2>
 
       <div className="container portfolio__container">
         <article className="portfolio__item">

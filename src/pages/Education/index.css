@@ -19,6 +19,7 @@
 .education__container {
   display: grid;
   grid-template-columns: 1fr;
+  padding: 1rem;
   gap: 2rem;
   margin: 0 auto;
   position: relative;
@@ -58,7 +59,7 @@
 /* Timeline Dot */
 .education__timeline-dot {
   position: absolute;
-  left: -30px;
+  left: -46px;
   top: 50%;
   transform: translateY(-50%);
   width: 30px;
