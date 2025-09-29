@@ -1,4 +1,4 @@
-nav {
+.navbar {
   background: rgba(0, 0, 0, 0.3);
   width: max-content;
   display: flex;
@@ -13,17 +13,24 @@ nav {
   backdrop-filter: blur(15px);
 }
 
-nav a {
+.navbar a {
   background: transparent;
   padding: 0.9rem;
   border-radius: 50px;
 }
 
-nav a:hover {
+.navbar a:hover {
   background: rgba(0, 0, 0, 0.3);
 }
 
-nav a.active {
+.navbar a.active {
   background: var(--color-primary);
   color: var(--color-bg);
+}
+
+/*************** Media Query (Small Devices)*****************/
+@media screen and (min-width: 600px) {
+  .navbar {
+    display: none;
+  }
 }

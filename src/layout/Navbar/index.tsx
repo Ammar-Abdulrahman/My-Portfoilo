@@ -1,14 +1,15 @@
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
-import { BiBook } from "react-icons/bi";
-import { RiServiceLine } from "react-icons/ri";
 import { BiMessageSquareDetail } from "react-icons/bi";
 import "./index.css";
 import { useState } from "react";
+import { GiAchievement } from "react-icons/gi";
+import { GrProjects } from "react-icons/gr";
+//import { VscSymbolColor } from "react-icons/vsc";
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState("#");
   return (
-    <nav>
+    <nav className="navbar">
       <a
         href="#"
         onClick={() => {
@@ -28,22 +29,22 @@ const Navbar = () => {
         <AiOutlineUser />
       </a>
       <a
-        href="#skills"
-        onClick={() => {
-          setActiveNav("#skills");
-        }}
-        className={activeNav === "#skills" ? "active" : ""}
-      >
-        <BiBook />
-      </a>
-      <a
         href="#experience"
         onClick={() => {
           setActiveNav("#experience");
         }}
         className={activeNav === "#experience" ? "active" : ""}
       >
-        <RiServiceLine />
+        <GiAchievement />
+      </a>
+      <a
+        href="#projects"
+        onClick={() => {
+          setActiveNav("#projects");
+        }}
+        className={activeNav === "#projects" ? "active" : ""}
+      >
+        <GrProjects />
       </a>
       <a
         href="#contact"
