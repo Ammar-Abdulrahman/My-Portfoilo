@@ -9,7 +9,7 @@ const HeaderPage = () => {
   const nameArray = name.split("");
 
   return (
-    <header>
+    <header className="header__section">
       <div className="container header__container">
         <motion.h5
           initial={{ opacity: 0, y: -50 }}

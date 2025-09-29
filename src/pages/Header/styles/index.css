@@ -1,4 +1,4 @@
-header {
+.header__section {
   height: 100vh;
   padding-top: 1rem;
   overflow: hidden;
@@ -14,7 +14,6 @@ header {
   margin-top: 1rem;
   display: flex;
   gap: 1.2rem;
-  justify-content: center;
 }
 
 .header__social {
