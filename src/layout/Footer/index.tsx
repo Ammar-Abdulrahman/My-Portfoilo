@@ -1,4 +1,4 @@
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import "./index.css";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
@@ -40,10 +40,7 @@ const Footer = () => {
         >
           <BsLinkedin />
         </a>
-        <a
-          href="https://www.github.com/ammar-abdulrahman/ "
-          target="_blank"
-        >
+        <a href="https://www.github.com/ammar-abdulrahman/ " target="_blank">
           <BsGithub />
         </a>
         <a
@@ -54,6 +51,9 @@ const Footer = () => {
         </a>
         <a href="https://www.instagram.com/ammar__abdulrahman/" target="_blank">
           <FiInstagram />
+        </a>
+        <a href="https://wa.me/+963964793913" target="_blank">
+          <BsWhatsapp />
         </a>
         <a href="https://t.me/Ammar_Abdulrahman" target="_blank">
           <FaTelegramPlane />
