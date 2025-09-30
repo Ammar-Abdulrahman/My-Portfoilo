@@ -121,7 +121,7 @@ textarea {
   }
 
   /* Adjust form elements for small screens */
-  input,
+  form ,input,
   textarea {
     padding: 1rem;
   }

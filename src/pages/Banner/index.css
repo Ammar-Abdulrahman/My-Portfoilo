@@ -69,3 +69,15 @@
     transform: translate(-50%, -52%) scale(1.05) rotate(5deg);
   }
 }
+
+/*************** Media Query (Small Devices)*****************/
+@media screen and (max-width: 600px) {
+  .banner {
+    transform: scale(80%);
+  }
+
+  .banner .image {
+  transform: scale(75%);
+}
+
+}
