@@ -1,114 +1,67 @@
 import "./index.css";
 import { BiCheck } from "react-icons/bi";
+import { motion } from "framer-motion";
+import SectionHeader from "@Components/SectionHeader";
+import { useTranslation } from "react-i18next";
+import { scaleIn, staggerContainer, viewportOnce } from "@Utils/motion";
+
 const ServicesPage = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      title: t("services.frontend.title"),
+      items: t("services.frontend.items", { returnObjects: true }) as string[],
+    },
+    {
+      title: t("services.ui.title"),
+      items: t("services.ui.items", { returnObjects: true }) as string[],
+    },
+    {
+      title: t("services.performance.title"),
+      items: t("services.performance.items", {
+        returnObjects: true,
+      }) as string[],
+    },
+  ];
+
   return (
-    <section id="services">
-      <h5>What I Offer</h5>
-      <h2>Services</h2>
+    <motion.section
+      id="services"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={staggerContainer}
+    >
+      <SectionHeader
+        eyebrow={t("services.eyebrow")}
+        title={t("services.title")}
+      />
+
       <div className="container services__container">
-        <article className="service">
-          <div className="service__head">
-            <h3>Web Develpment</h3>
-          </div>
+        {services.map((service) => (
+          <motion.article
+            key={service.title}
+            className="service"
+            variants={scaleIn}
+            whileHover={{ y: -6 }}
+          >
+            <div className="service__head">
+              <h3>{service.title}</h3>
+            </div>
 
-          <ul className="service__list">
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-          </ul>
-        </article>
-
-        {/*End of Web development*/}
-        <article className="service">
-          <div className="service__head">
-            <h3>UI/UX Design</h3>
-          </div>
-
-          <ul className="service__list">
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-          </ul>
-        </article>
-
-        {/*End of Ui Ux*/}
-
-        <article className="service">
-          <div className="service__head">
-            <h3>Content Creation</h3>
-          </div>
-
-          <ul className="service__list">
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-            <li>
-              <BiCheck className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            </li>
-          </ul>
-        </article>
+            <ul className="service__list">
+              {service.items.map((item) => (
+                <li key={item}>
+                  <BiCheck className="service__list-icon" />
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.article>
+        ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

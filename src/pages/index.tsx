@@ -1,11 +1,9 @@
-import NavbarPage from "@Pages/Navbar"
+import NavbarPage from "@Pages/Navbar";
 import Navbar from "@Layout/Navbar";
-// import HeaderPage from "./Header";
 import About from "./About";
 import Skills from "./Skills";
-// import ServicesPage from "./Services";
+import ServicesPage from "./Services";
 import Portfolio from "./Portfoilo";
-// import Testimonials from "./Testimonials";
 import ContactUs from "./Contact";
 import Footer from "@Layout/Footer";
 import EducationSection from "./Education";
@@ -22,9 +20,8 @@ const MainPage = () => {
       <EducationSection />
       <Experience />
       <Skills />
-      {/* <ServicesPage /> */}
+      <ServicesPage />
       <Portfolio />
-      {/* <Testimonials /> */}
       <ContactUs />
       <Footer />
     </>

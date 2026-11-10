@@ -1,88 +1,100 @@
 .container.contact__container {
-  width: 58%;
+  width: 68%;
   display: grid;
-  grid-template-columns: 35% 65%;
-  gap: 6%;
+  grid-template-columns: 34% 1fr;
+  gap: 5%;
 }
 
 .contact__options {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .contact__option {
-  background: var(--color-bg-varient);
-  padding: 1.2rem;
-  border-radius: 1.2rem;
+  background: linear-gradient(160deg, var(--color-card-from), var(--color-card-to));
+  padding: 1.25rem 1rem;
+  border-radius: 1.1rem;
   text-align: center;
-  justify-content: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   transition: var(--transition);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .contact__option:hover {
   background: transparent;
   border-color: var(--color-primary-varient);
+  box-shadow: var(--shadow-glow);
 }
 
-.contact__option-icon {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.contact__option h4 {
+  margin-bottom: 0.2rem;
+  color: var(--color-white);
+}
+
+.contact__option h5 {
+  color: var(--color-light);
+  font-size: 0.78rem;
+  word-break: break-word;
+  font-weight: 400;
 }
 
 .contact__option a {
   margin-top: 0.7rem;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 
-/**********Form********/
-form {
+.contact__form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.1rem;
 }
 
-input,
-textarea {
+.contact__form input,
+.contact__form textarea {
   width: 100%;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: transparent;
-  border: 2px solid var(--color-primary-varient);
+  padding: 1.15rem 1.2rem;
+  border-radius: 0.7rem;
+  background: var(--color-card-to);
+  border: 1.5px solid var(--color-primary-varient);
   resize: none;
   color: var(--color-white);
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-soft);
+  background: var(--color-card-from);
+}
+
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: var(--color-muted);
 }
 
 .contact__icon-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .contact__icon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-primary);
   background: var(--color-bg);
   padding: 0.5rem;
   border-radius: 50%;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.12);
 }
 
-/*************** Media Query (Meduim Devices)*****************/
 @media screen and (max-width: 1024px) {
-  .container.conatact__container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-/*************** Media Query (Meduim Small Devices)*****************/
-@media screen and (max-width: 768px) {
   .container.contact__container {
-    width: 75%;
+    width: 82%;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -91,38 +103,32 @@ textarea {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5rem;
   }
 
   .contact__option {
     flex: 1;
-    min-width: 200px;
-    max-width: 250px;
+    min-width: 180px;
   }
 }
 
-/*************** Media Query (Small Devices)*****************/
 @media screen and (max-width: 600px) {
   .container.contact__container {
     width: var(--container-width-sm);
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.4rem;
   }
 
-  /* Stack contact options vertically on small screens */
   .contact__options {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
 
   .contact__option {
     width: 100%;
-    max-width: 300px;
+    max-width: none;
   }
 
-  /* Adjust form elements for small screens */
-  form ,input,
-  textarea {
+  .contact__form input,
+  .contact__form textarea {
     padding: 1rem;
   }
 }

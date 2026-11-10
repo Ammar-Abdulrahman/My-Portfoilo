@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "about": "About",
+    "education": "Education",
+    "experience": "Experience",
+    "skills": "Skills",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brand": "Ammar Abdulrahman"
+  },
+  "controls": {
+    "language": "Language",
+    "theme": "Theme",
+    "mode": "Mode",
+    "blue": "Blue",
+    "green": "Green",
+    "dark": "Dark",
+    "light": "Light",
+    "switchToArabic": "العربية",
+    "switchToEnglish": "EN"
+  },
+  "banner": {
+    "eyebrow": "Software Engineer · Front End",
+    "name": "Ammar Abdulrahman",
+    "role": "Building clean, responsive interfaces that feel fast and polished",
+    "bioBefore": "Software Engineer with",
+    "bioHighlight": "2+ years experience",
+    "bioAfter": "in front-end development — adaptable, committed, and always leveling up through real products and thoughtful UI craft.",
+    "downloadCv": "Download CV",
+    "letsTalk": "Let's Talk"
+  },
+  "about": {
+    "eyebrow": "Get To Know",
+    "title": "About Me",
+    "experience": "Experience",
+    "experienceValue": "2+ Years",
+    "clients": "Clients",
+    "clientsValue": "5+ Worldwide",
+    "projects": "Projects",
+    "projectsValue": "10+ Completed",
+    "description": "Detail-oriented Front End Engineer dedicated to building seamless digital experiences through clean code and innovative solutions. With a solid foundation in software engineering principles and hands-on experience across multiple frameworks, I bring both technical excellence and creative problem-solving to every project.",
+    "cta": "Let's Talk"
+  },
+  "education": {
+    "eyebrow": "My academic journey in software engineering",
+    "title": "My Education",
+    "institution": "Faculty of Information Technology Engineering",
+    "specialization": "Specialized in Software Engineering",
+    "period": "Sep 2019 – Sep 2024",
+    "location": "Damascus, Syria",
+    "summary": "My academic journey at the Faculty of Information Technology Engineering instilled a systematic approach to software development, emphasizing clean architecture and efficient coding practices that I consistently apply in professional projects — forming the bedrock of my technical expertise.",
+    "courses": {
+      "algorithm": "Algorithm",
+      "dataStructures": "Data Structures",
+      "softwareEngineering": "Software Engineering"
+    }
+  },
+  "experience": {
+    "eyebrow": "My experience journey in software engineering",
+    "title": "My Experience"
+  },
+  "skills": {
+    "eyebrow": "What Skills I Have",
+    "title": "My Skills"
+  },
+  "services": {
+    "eyebrow": "What I Offer",
+    "title": "Services",
+    "frontend": {
+      "title": "Frontend Development",
+      "items": [
+        "Build responsive React and Next.js applications from scratch",
+        "Implement reusable component libraries and design systems",
+        "Integrate REST APIs with clean, maintainable data flows",
+        "Ship TypeScript-first codebases with strong structure",
+        "Deliver accessible, production-ready user interfaces"
+      ]
+    },
+    "ui": {
+      "title": "UI Implementation",
+      "items": [
+        "Translate Figma designs into pixel-accurate interfaces",
+        "Craft smooth interactions with Framer Motion",
+        "Style with Tailwind, Material UI, or Ant Design",
+        "Ensure consistent branding across pages and states",
+        "Optimize layouts for desktop, tablet, and mobile"
+      ]
+    },
+    "performance": {
+      "title": "Performance & Delivery",
+      "items": [
+        "Improve load speed, responsiveness, and Core UX polish",
+        "Set up Git workflows and CI/CD friendly frontends",
+        "Collaborate in agile sprints with clear communication",
+        "Review code and refactor for long-term maintainability",
+        "Support deployment, QA fixes, and iterative releases"
+      ]
+    }
+  },
+  "projects": {
+    "eyebrow": "My React Work",
+    "title": "Projects",
+    "liveDemo": "Live Demo",
+    "github": "Github",
+    "appleApp": "Apple App"
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Contact Me",
+    "email": "Email",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "sendMessage": "Send a message",
+    "fullName": "Your Full Name",
+    "yourEmail": "Your Email",
+    "yourMessage": "Your Message",
+    "submit": "Send Message"
+  },
+  "footer": {
+    "home": "Home",
+    "rights": "All rights reserved."
+  }
+}

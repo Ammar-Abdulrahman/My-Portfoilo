@@ -1,65 +1,105 @@
 footer {
-  background: var(--color-primary);
-  padding: 3rem 0;
+  background: linear-gradient(180deg, var(--color-primary-strong), var(--color-primary));
+  padding: 3.5rem 1rem 2rem;
   text-align: center;
   font-size: 0.9rem;
   margin-top: 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(21, 21, 40, 0.18), transparent 35%);
+  pointer-events: none;
+}
+
+footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 footer a {
-  color: var(--color-bg);
+  color: var(--footer-fg);
 }
 
 .footer__logo {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  margin-bottom: 1.6rem;
   display: inline-block;
+}
+
+.footer__logo:hover {
+  opacity: 0.85;
+  color: var(--footer-fg);
 }
 
 .permalinks {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin: 0 auto 3rem;
+  gap: 0.85rem 1.4rem;
+  margin: 0 auto 2.2rem;
+  max-width: 720px;
+}
+
+.permalinks a {
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+.permalinks a:hover {
+  opacity: 1;
+  color: var(--footer-fg);
 }
 
 .footer__social {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer__social a {
-  background: var(--color-bg);
-  color: var(--color-white);
-  padding: 0.8rem;
+  background: var(--footer-fg);
+  color: var(--color-primary);
+  padding: 0.75rem;
   border-radius: 0.7rem;
   display: flex;
   border: 1px solid transparent;
+  transition: var(--transition);
 }
 
 .footer__social a:hover {
   background: transparent;
-  color: var(--color-bg);
-  border-color: var(--color-bg);
+  color: var(--footer-fg);
+  border-color: var(--footer-fg);
 }
 
 .footer__copyright {
-  margin-bottom: 4rem;
-  color: var(--color-bg);
+  margin-bottom: 1rem;
+  color: var(--footer-fg);
+  opacity: 0.9;
 }
 
-/*************** Media Query (Small Devices)*****************/
 @media screen and (max-width: 600px) {
+  footer {
+    margin-top: 4.5rem;
+    padding-bottom: 5.5rem;
+  }
+
   .permalinks {
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.9rem 1.1rem;
   }
 
   .footer__social {
-    margin-bottom: 2.6rem;
+    margin-bottom: 2rem;
   }
 }

@@ -2,283 +2,116 @@ import { TbPointFilled } from "react-icons/tb";
 import { MdOutlineDeveloperMode } from "react-icons/md";
 import { SiCssdesignawards } from "react-icons/si";
 import { RiReactjsLine } from "react-icons/ri";
-//import { FaCode } from "react-icons/fa6";
 import { MdManageAccounts } from "react-icons/md";
 import { IoGitBranch } from "react-icons/io5";
 import { SiHyperskill } from "react-icons/si";
-
 import "./index.css";
 import { motion } from "framer-motion";
+import SectionHeader from "@Components/SectionHeader";
+import { useTranslation } from "react-i18next";
+import { scaleIn, staggerContainer, viewportOnce } from "@Utils/motion";
+import type { IconType } from "react-icons";
 
-const Experience = () => {
+type SkillGroup = {
+  icon: IconType;
+  title: string;
+  items: string[];
+};
+
+const skillGroups: SkillGroup[] = [
+  {
+    icon: MdOutlineDeveloperMode,
+    title: "Frontend Development",
+    items: ["React Js", "Next Js", "Typescript", "Html/Css/Javascript", "Vue Js"],
+  },
+  {
+    icon: SiCssdesignawards,
+    title: "UI Libraries & Styling",
+    items: [
+      "Material UI",
+      "Ant Design",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Framer Motion",
+    ],
+  },
+  {
+    icon: RiReactjsLine,
+    title: "React Ecosystem",
+    items: [
+      "Redux",
+      "Zustand",
+      "React Query",
+      "React Router",
+      "Formik",
+      "React Hook Form",
+    ],
+  },
+  {
+    icon: IoGitBranch,
+    title: "Version Control",
+    items: ["Git", "Github", "Gitlab", "CI/CD Pipelines"],
+  },
+  {
+    icon: MdManageAccounts,
+    title: "Project Management",
+    items: ["Azure", "Jira", "YouTrack", "Slack"],
+  },
+  {
+    icon: SiHyperskill,
+    title: "Soft Skills",
+    items: [
+      "Clean code and architecture",
+      "Problem solving",
+      "Team work",
+      "Communication",
+    ],
+  },
+];
+
+const Skills = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       id="skills"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: 0.3 }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={staggerContainer}
     >
-      <h5>What Skills I Have</h5>
-      <h2>My Skills</h2>
+      <SectionHeader eyebrow={t("skills.eyebrow")} title={t("skills.title")} />
 
       <div className="container skills__container">
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <MdOutlineDeveloperMode className="skills__icon" />
-          </div>
-          <h3>Frontend Development</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>React Js</h4>
+        {skillGroups.map((group) => {
+          const Icon = group.icon;
+          return (
+            <motion.div
+              key={group.title}
+              className="skills__backend"
+              variants={scaleIn}
+              whileHover={{ y: -6 }}
+            >
+              <div className="skills__icon-container">
+                <Icon className="skills__icon" />
               </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Next Js</h4>
+              <h3>{group.title}</h3>
+              <div className="skills__content">
+                {group.items.map((item) => (
+                  <article key={item} className="skills__details">
+                    <TbPointFilled className="skills__details-icon" />
+                    <div>
+                      <h4>{item}</h4>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Typescript</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Html/Css/Javascript</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Vue Js</h4>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <SiCssdesignawards className="skills__icon" />
-          </div>
-          <h3>UI Libraries & Styling</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4> Material ui</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Ant design</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Tailwind css</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Bootstrap</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Framer-motion</h4>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <RiReactjsLine className="skills__icon" />
-          </div>
-          <h3>React Ecosystem</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Redux</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Zustand</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>React-query</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>React-Router-dom</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Formik</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>React-hook-form</h4>
-              </div>
-            </article>
-          </div>
-        </div>
-        {/*Backend skills*/}
-        {/* <div className="skills__backend">
-          <div className="skills__icon-container">
-            <FaCode className="skills__icon" />
-          </div>
-          <h3>Programming</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Javascript</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Php</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>C++</h4>
-              </div>
-            </article>
-          </div>
-        </div> */}
-
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <IoGitBranch className="skills__icon" />
-          </div>
-          <h3>Version Control</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Git</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Github</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Gitlab</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>CI/CD Pipelines</h4>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <MdManageAccounts className="skills__icon" />
-          </div>
-          <h3>Project Management</h3>
-
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Azure</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Jira</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>YouTrack</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Slack</h4>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div className="skills__backend">
-          <div className="skills__icon-container">
-            <SiHyperskill className="skills__icon" />
-          </div>
-          <h3> Soft Skills</h3>
-          <div className="skills__content">
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Clean code and architecture</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Problem solving</h4>
-              </div>
-            </article>
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Team work</h4>
-              </div>
-            </article>
-
-            <article className="skills__details">
-              <TbPointFilled className="skills__details-icon" />
-              <div>
-                <h4>Communication</h4>
-              </div>
-            </article>
-          </div>
-        </div>
+            </motion.div>
+          );
+        })}
       </div>
     </motion.section>
   );
 };
 
-export default Experience;
+export default Skills;

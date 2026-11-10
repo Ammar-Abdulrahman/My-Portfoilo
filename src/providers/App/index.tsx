@@ -1,10 +1,13 @@
 import MainPage from "@Pages/index";
-const index = () => {
+import { ThemeProvider } from "@Context/ThemeContext";
+import "@Localization/i18n";
+
+const App = () => {
   return (
-    <div>
+    <ThemeProvider>
       <MainPage />
-    </div>
+    </ThemeProvider>
   );
 };
 
-export default index;
+export default App;

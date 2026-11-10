@@ -1,60 +1,52 @@
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { BiMessageSquareDetail } from "react-icons/bi";
-import "./index.css";
-import { useState } from "react";
 import { GiAchievement } from "react-icons/gi";
 import { GrProjects } from "react-icons/gr";
-//import { VscSymbolColor } from "react-icons/vsc";
+import { MdOutlineMiscellaneousServices } from "react-icons/md";
+import { useEffect, useState } from "react";
+import "./index.css";
+
+const navItems = [
+  { href: "#home", icon: AiOutlineHome, id: "home" },
+  { href: "#about", icon: AiOutlineUser, id: "about" },
+  { href: "#experience", icon: GiAchievement, id: "experience" },
+  { href: "#services", icon: MdOutlineMiscellaneousServices, id: "services" },
+  { href: "#projects", icon: GrProjects, id: "projects" },
+  { href: "#contact", icon: BiMessageSquareDetail, id: "contact" },
+];
 
 const Navbar = () => {
-  const [activeNav, setActiveNav] = useState("#");
+  const [activeNav, setActiveNav] = useState("#home");
+
+  useEffect(() => {
+    const onScroll = () => {
+      for (const item of [...navItems].reverse()) {
+        const el = document.getElementById(item.id);
+        if (el && window.scrollY + 140 >= el.offsetTop) {
+          setActiveNav(item.href);
+          break;
+        }
+      }
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="navbar">
-      <a
-        href="#"
-        onClick={() => {
-          setActiveNav("#");
-        }}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <AiOutlineHome />
-      </a>
-      <a
-        href="#about"
-        onClick={() => {
-          setActiveNav("#about");
-        }}
-        className={activeNav === "#about" ? "active" : ""}
-      >
-        <AiOutlineUser />
-      </a>
-      <a
-        href="#experience"
-        onClick={() => {
-          setActiveNav("#experience");
-        }}
-        className={activeNav === "#experience" ? "active" : ""}
-      >
-        <GiAchievement />
-      </a>
-      <a
-        href="#projects"
-        onClick={() => {
-          setActiveNav("#projects");
-        }}
-        className={activeNav === "#projects" ? "active" : ""}
-      >
-        <GrProjects />
-      </a>
-      <a
-        href="#contact"
-        onClick={() => {
-          setActiveNav("#contact");
-        }}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
-        <BiMessageSquareDetail />
-      </a>
+    <nav className="navbar" aria-label="Quick navigation">
+      {navItems.map(({ href, icon: Icon }) => (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setActiveNav(href)}
+          className={activeNav === href ? "active" : ""}
+          aria-label={href.replace("#", "")}
+        >
+          <Icon />
+        </a>
+      ))}
     </nav>
   );
 };

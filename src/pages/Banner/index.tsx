@@ -6,69 +6,120 @@ import { FaGithub } from "react-icons/fa";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import {
+  fadeUp,
+  slideFromLeft,
+  slideFromRight,
+  staggerContainer,
+  staggerFast,
+} from "@Utils/motion";
+
+const socials = [
+  {
+    href: "https://www.linkedin.com/in/ammar-abdulrahman/",
+    icon: BsLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/Ammar-Abdulrahman",
+    icon: FaGithub,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=100006471773863",
+    icon: FaFacebookF,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/ammar__abdulrahman/",
+    icon: FiInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://wa.me/+963964793913",
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+  },
+  {
+    href: "https://t.me/Ammar_Abdulrahman",
+    icon: FaTelegramPlane,
+    label: "Telegram",
+  },
+];
 
 const BannerPage = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="bg-transparent lg:grid lg:h-screen lg:place-content-center">
-      <div className="mx-auto w-screen max-w-screen-xl px-4 py-6 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32">
-        <div className="max-w-prose text-left">
-          <h1 className="text-4xl font-bold sm:text-5xl text-[#4db5ff]">
-            Ammar Abdulrahman
-          </h1>
+    <section id="home" className="banner__section">
+      <div className="banner__orb banner__orb--one" aria-hidden="true" />
+      <div className="banner__orb banner__orb--two" aria-hidden="true" />
 
-          <h2 className="p-2 text-gray-400">
-            Software Engineer | Front end Engineer
-          </h2>
-          <p className="mt-4 text-base text-pretty text-white sm:text-lg/relaxed">
-            Software Engineer with{" "}
-            <span className="text-[#4db5ff]">2 years experience</span> in
-            front-end development, high level of adaptability, commitment ,
-            passion to learn new things and improve my skills
-          </p>
+      <div className="banner__grid">
+        <motion.div
+          className="banner__copy"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p className="banner__eyebrow" variants={fadeUp}>
+            {t("banner.eyebrow")}
+          </motion.p>
 
-          <div className="cta">
+          <motion.h1 variants={slideFromLeft}>{t("banner.name")}</motion.h1>
+
+          <motion.h2 className="banner__role" variants={fadeUp}>
+            {t("banner.role")}
+          </motion.h2>
+
+          <motion.p className="banner__bio" variants={fadeUp}>
+            {t("banner.bioBefore")}{" "}
+            <span className="banner__highlight">{t("banner.bioHighlight")}</span>{" "}
+            {t("banner.bioAfter")}
+          </motion.p>
+
+          <motion.div className="cta" variants={fadeUp}>
             <a className="btn" href={MyCv} download>
-              Download Cv
+              {t("banner.downloadCv")}
             </a>
             <a className="btn btn-primary" href="#contact">
-              Let's Talk
+              {t("banner.letsTalk")}
             </a>
-          </div>
+          </motion.div>
 
-          <div className="header__social_banner">
-            <a
-              href="https://www.linkedin.com/in/ammar-abdulrahman/ "
-              target="_blank"
-            >
-              <BsLinkedin className="w-5 h-5" />
-            </a>
-            <a href="https://github.com/Ammar-Abdulrahman" target="_blank">
-              <FaGithub className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=100006471773863"
-              target="_blank"
-            >
-              <FaFacebookF className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.instagram.com/ammar__abdulrahman/"
-              target="_blank"
-            >
-              <FiInstagram className="w-5 h-5" />
-            </a>
-            <a href="https://wa.me/+963964793913" target="_blank">
-              <FaWhatsapp className="w-5 h-5" />
-            </a>
-            <a href="https://t.me/Ammar_Abdulrahman" target="_blank">
-              <FaTelegramPlane className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
+          <motion.div
+            className="header__social_banner"
+            variants={staggerFast}
+            initial="hidden"
+            animate="visible"
+          >
+            {socials.map(({ href, icon: Icon, label }) => (
+              <motion.a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                variants={fadeUp}
+                whileHover={{ y: -3, scale: 1.06 }}
+                whileTap={{ scale: 0.96 }}
+              >
+                <Icon className="w-5 h-5" />
+              </motion.a>
+            ))}
+          </motion.div>
+        </motion.div>
 
-        <div className="banner">
+        <motion.div
+          className="banner"
+          variants={slideFromRight}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="image">
-            <img src={ammar} alt="Ammar" />
+            <img src={ammar} alt={t("banner.name")} />
           </div>
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -89,9 +140,9 @@ const BannerPage = () => {
               transform="translate(100 100)"
             />
           </svg>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

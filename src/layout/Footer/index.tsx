@@ -2,68 +2,98 @@ import { BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import "./index.css";
 import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { fadeUp, staggerFast, viewportOnce } from "@Utils/motion";
+
+const socials = [
+  {
+    href: "https://www.linkedin.com/in/ammar-abdulrahman/",
+    icon: BsLinkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.github.com/ammar-abdulrahman/",
+    icon: BsGithub,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=100006471773863",
+    icon: FaFacebookF,
+    label: "Facebook",
+  },
+  {
+    href: "https://www.instagram.com/ammar__abdulrahman/",
+    icon: FiInstagram,
+    label: "Instagram",
+  },
+  {
+    href: "https://wa.me/+963964793913",
+    icon: BsWhatsapp,
+    label: "WhatsApp",
+  },
+  {
+    href: "https://t.me/Ammar_Abdulrahman",
+    icon: FaTelegramPlane,
+    label: "Telegram",
+  },
+];
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const links = [
+    { href: "#home", label: t("footer.home") },
+    { href: "#about", label: t("nav.about") },
+    { href: "#education", label: t("nav.education") },
+    { href: "#experience", label: t("nav.experience") },
+    { href: "#skills", label: t("nav.skills") },
+    { href: "#services", label: t("nav.services") },
+    { href: "#projects", label: t("nav.projects") },
+    { href: "#contact", label: t("nav.contact") },
+  ];
+
   return (
-    <footer>
-      <a href="#" className="footer__logo">
-        Ammar Abdulrahman
-      </a>
-      <ul className="permalinks">
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#education">Education</a>
-        </li>
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#portfolio">Portfolio</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
+    <motion.footer
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={staggerFast}
+    >
+      <motion.a href="#home" className="footer__logo" variants={fadeUp}>
+        {t("nav.brand")}
+      </motion.a>
 
-      <div className="footer__social">
-        <a
-          href="https://www.linkedin.com/in/ammar-abdulrahman/ "
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-        <a href="https://www.github.com/ammar-abdulrahman/ " target="_blank">
-          <BsGithub />
-        </a>
-        <a
-          href="https://www.facebook.com/profile.php?id=100006471773863"
-          target="_blank"
-        >
-          <FaFacebookF />
-        </a>
-        <a href="https://www.instagram.com/ammar__abdulrahman/" target="_blank">
-          <FiInstagram />
-        </a>
-        <a href="https://wa.me/+963964793913" target="_blank">
-          <BsWhatsapp />
-        </a>
-        <a href="https://t.me/Ammar_Abdulrahman" target="_blank">
-          <FaTelegramPlane />
-        </a>
-      </div>
+      <motion.ul className="permalinks" variants={staggerFast}>
+        {links.map((link) => (
+          <motion.li key={link.href} variants={fadeUp}>
+            <a href={link.href}>{link.label}</a>
+          </motion.li>
+        ))}
+      </motion.ul>
 
-      <div className="footer__copyright">
-        <small>&copy; Ammar Tutorials. All rights reserved.</small>
-      </div>
-    </footer>
+      <motion.div className="footer__social" variants={staggerFast}>
+        {socials.map(({ href, icon: Icon, label }) => (
+          <motion.a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={label}
+            variants={fadeUp}
+            whileHover={{ y: -4, scale: 1.05 }}
+          >
+            <Icon />
+          </motion.a>
+        ))}
+      </motion.div>
+
+      <motion.div className="footer__copyright" variants={fadeUp}>
+        <small>
+          &copy; {new Date().getFullYear()} {t("nav.brand")}. {t("footer.rights")}
+        </small>
+      </motion.div>
+    </motion.footer>
   );
 };
 

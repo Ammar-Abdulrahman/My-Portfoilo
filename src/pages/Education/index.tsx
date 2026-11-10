@@ -1,27 +1,38 @@
 import "./index.css";
-import universityLogo from "@Assets/images/damscus-removebg-preview.png"; // You'll need to add your actual logo
+import universityLogo from "@Assets/images/damscus-removebg-preview.png";
 import { motion } from "framer-motion";
 import { RiGraduationCapFill } from "react-icons/ri";
+import SectionHeader from "@Components/SectionHeader";
+import { useTranslation } from "react-i18next";
+import { fadeUp, scaleIn, staggerContainer, viewportOnce } from "@Utils/motion";
 
-const Experience = () => {
+const EducationSection = () => {
+  const { t } = useTranslation();
+
+  const courses = [
+    t("education.courses.algorithm"),
+    t("education.courses.dataStructures"),
+    t("education.courses.softwareEngineering"),
+  ];
+
   return (
     <motion.section
       id="education"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: 0.3 }}
       className="education__section"
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      variants={staggerContainer}
     >
-      <h5>My academic journey in software engineering</h5>
-      <h2>My Education</h2>
+      <SectionHeader
+        eyebrow={t("education.eyebrow")}
+        title={t("education.title")}
+      />
 
       <div className="container education__container">
-        {/* Timeline connector line */}
-        <div className="education__timeline-connector"></div>
+        <div className="education__timeline-connector" />
 
-        <div className="education__card">
-          {/* Timeline dot */}
+        <motion.div className="education__card" variants={scaleIn}>
           <div className="education__timeline-dot">
             <RiGraduationCapFill />
           </div>
@@ -29,15 +40,15 @@ const Experience = () => {
           <div className="education__header">
             <img
               src={universityLogo}
-              alt="Damascus University Logo"
+              alt={t("education.institution")}
               className="education__logo"
             />
             <div className="education__title-container">
               <h3 className="education__institution">
-                Faculty of Information Technology Engineering
+                {t("education.institution")}
               </h3>
               <p className="education__specialization">
-                Specialized in Software Engineering
+                {t("education.specialization")}
               </p>
             </div>
           </div>
@@ -56,7 +67,7 @@ const Experience = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Sep 2019 – Sep 2024</span>
+              <span>{t("education.period")}</span>
             </div>
 
             <div className="education__location">
@@ -72,33 +83,27 @@ const Experience = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Damascus, Syria</span>
+              <span>{t("education.location")}</span>
             </div>
           </div>
 
-          <div>
-            My academic journey at the Faculty of Information Technology
-            Engineering instilled a systematic approach to software development,
-            emphasizing clean architecture and efficient coding practices that I
-            consistently apply in professional projects and provided deep
-            insights into scalable system design and development methodologies,
-            forming the bedrock of my technical expertise and approach to
-            building maintainable applications.
-          </div>
+          <motion.p className="education__summary" variants={fadeUp}>
+            {t("education.summary")}
+          </motion.p>
 
           <div className="education__courses">
             <div className="education__course-list">
-              <span className="education__course-pill">Algorithm</span>
-              <span className="education__course-pill">Data Structures</span>
-              <span className="education__course-pill">
-                Software Engineering
-              </span>
+              {courses.map((course) => (
+                <span key={course} className="education__course-pill">
+                  {course}
+                </span>
+              ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
 };
 
-export default Experience;
+export default EducationSection;
