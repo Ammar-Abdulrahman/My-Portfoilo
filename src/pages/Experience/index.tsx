@@ -1,4 +1,5 @@
 import "./index.css";
+import flychamLogo from "@Assets/images/flycham.png";
 import presentlyLogo from "@Assets/images/presently.jpg";
 import LogicDevLogo from "@Assets/images/logic.jpg";
 import TabTabGoLogo from "@Assets/images/tabtabgo.png";
@@ -8,6 +9,7 @@ import {
   TbCircleNumber2Filled,
   TbCircleNumber3Filled,
   TbCircleNumber4Filled,
+  TbCircleNumber5Filled,
 } from "react-icons/tb";
 import { motion } from "framer-motion";
 import SectionHeader from "@Components/SectionHeader";
@@ -29,6 +31,20 @@ type ExperienceItem = {
 const experiences: ExperienceItem[] = [
   {
     icon: TbCircleNumber1Filled,
+    logo: flychamLogo,
+    company: "Fly Cham",
+    role: "Front End Developer",
+    period: "Oct 2025 – Present",
+    location: "On-site",
+    points: [
+      "Building and enhancing the Fly Cham airline website with a focus on booking flows, deals presentation, and responsive UI.",
+      "Developing the careers portal experience, including job search, department exploration, and polished candidate-facing screens.",
+      "Collaborating on-site with product and design to ship production-ready frontend features with consistent branding.",
+    ],
+    stack: ["React", "TypeScript", "Responsive UI", "REST APIs"],
+  },
+  {
+    icon: TbCircleNumber2Filled,
     logo: presentlyLogo,
     company: "Presently - Creative Agency",
     role: "Freelance React Developer",
@@ -41,7 +57,7 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    icon: TbCircleNumber2Filled,
+    icon: TbCircleNumber3Filled,
     logo: LogicDevLogo,
     company: "Logic Development",
     role: "React Developer",
@@ -62,7 +78,7 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    icon: TbCircleNumber3Filled,
+    icon: TbCircleNumber4Filled,
     logo: TabTabGoLogo,
     company: "TabTabGo",
     role: "Software Developer",
@@ -86,7 +102,7 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    icon: TbCircleNumber4Filled,
+    icon: TbCircleNumber5Filled,
     logo: FreeLancerLogo,
     company: "Freelance",
     role: "Software Developer",

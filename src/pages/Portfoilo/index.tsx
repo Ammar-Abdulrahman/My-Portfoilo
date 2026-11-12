@@ -1,4 +1,7 @@
 import "./index.css";
+import FlyChamCover from "@Assets/projects/flycham-site.jpg";
+import FlyChamCareersCover from "@Assets/projects/flycham-careers.jpg";
+import LocalizersCover from "@Assets/projects/localizers.png";
 import QrmtsCover from "@Assets/projects/qrmts.png";
 import BgareCover from "@Assets/projects/bgare.png";
 import ECommerceCover from "@Assets/projects/e-commerce.png";
@@ -15,12 +18,55 @@ const Portfolio = () => {
 
   const projects = [
     {
+      image: FlyChamCover,
+      title: "Fly Cham",
+      description:
+        "Official website for Fly Cham, a Syrian airline — featuring flight search and booking, destination deals, and a modern passenger experience across routes in the Gulf, Iraq, Turkey, and beyond.",
+      links: [
+        {
+          label: t("projects.liveDemo"),
+          href: "https://flycham.com/",
+          primary: true,
+        },
+      ],
+    },
+    {
+      image: FlyChamCareersCover,
+      title: "Fly Cham Careers",
+      description:
+        "Careers portal for Fly Cham where candidates can search jobs, explore departments such as Pilots and Cabin Crew, and learn about training and professional growth opportunities.",
+      links: [
+        {
+          label: t("projects.liveDemo"),
+          href: "http://careers.flycham.com/",
+          primary: true,
+        },
+      ],
+    },
+    {
+      image: LocalizersCover,
+      title: "The Localizers",
+      description:
+        "Corporate platform for The Localizers (ذا لوكالايزرز), a Saudi consultancy specialized in local content — delivering advisory services, secondment & operations, training & knowledge transfer, and AI-powered solutions for government and private sector clients.",
+      links: [
+        {
+          label: t("projects.liveDemo"),
+          href: "https://thelocalizers.com/",
+          primary: true,
+        },
+      ],
+    },
+    {
       image: QrmtsCover,
       title: "Qrmts",
       description:
         "A platform specializing in creating dynamic and static QR codes for businesses of all sizes — with customization, performance tracking, and analytics to boost digital engagement.",
       links: [
-        { label: t("projects.liveDemo"), href: "https://qrmts.com", primary: true },
+        {
+          label: t("projects.liveDemo"),
+          href: "https://qrmts.com",
+          primary: true,
+        },
       ],
     },
     {
