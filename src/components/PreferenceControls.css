@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
 .pref-controls__btn {
@@ -66,10 +67,18 @@
   transform: scale(1.08);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1180px) {
   .pref-controls {
     width: 100%;
     justify-content: flex-start;
-    padding: 0.5rem 1rem 0.25rem;
+    padding: 0.45rem 0.25rem 0.15rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pref-controls__btn {
+    min-width: 2.2rem;
+    height: 2.05rem;
+    font-size: 0.72rem;
   }
 }
